@@ -111,12 +111,19 @@ export function injectRdtClient(code: string, clientConfig: string, pluginImport
 	const ast = parse(code, { sourceType: "module" })
 	const didTransform = transform(ast, clientConfig)
 	if (!didTransform) {
-		return code
+		return { code }
 	}
-	const output = `${pluginImports}\n${gen(ast).code}`
+	const generatedOutput = gen(ast, { sourceMaps: true })
+	const output = `${pluginImports}\n${generatedOutput.code}`
 
 	if (!output.includes("export const links")) {
-		return [output, "", `export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];`].join("\n")
+		return {
+			code: [output, "", `export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];`].join("\n"),
+			map: generatedOutput.map,
+		}
 	}
-	return output
+	return {
+		code: output,
+		map: generatedOutput.map,
+	}
 }

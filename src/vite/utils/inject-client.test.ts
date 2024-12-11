@@ -30,7 +30,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should inject the client config correctly", () => {
@@ -60,7 +60,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should inject multiple plugins correctly", () => {
@@ -81,7 +81,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the default export properly, even if it's wrapped with a higher order function", () => {
@@ -107,7 +107,7 @@ describe("transform", () => {
 			}
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the default export properly even if it's declared as a variable and then exported", () => {
@@ -129,7 +129,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the default export properly even if it's declared as a function and then exported", () => {
@@ -151,7 +151,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the default export properly even if it's declared as a function and wrapped with a higher order function", () => {
@@ -179,7 +179,7 @@ describe("transform", () => {
 			}
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the default export properly even if it's rexported from another file", () => {
@@ -201,7 +201,7 @@ describe("transform", () => {
 			});
 			export const links = () => [{ rel: "stylesheet", href: rdtStylesheet }];
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the links export with the rdtStylesheet import when it's an empty array", () => {
@@ -221,7 +221,7 @@ describe("transform", () => {
 				plugins: []
 			});
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the links export with the rdtStylesheet import when it's not an empty array", () => {
@@ -241,7 +241,7 @@ describe("transform", () => {
 				plugins: []
 			});
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the links export with the rdtStylesheet when it's a function export", () => {
@@ -261,7 +261,7 @@ describe("transform", () => {
 				plugins: []
 			});
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the links export with the rdtStylesheet if it's a function export and it's an empty array", () => {
@@ -281,7 +281,7 @@ describe("transform", () => {
 				plugins: []
 			});
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the links export with the rdtStylesheet if it's wrapped with a higher order function", () => {
@@ -307,6 +307,6 @@ describe("transform", () => {
 				plugins: []
 			});
 	 `)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 })

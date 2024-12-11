@@ -147,10 +147,10 @@ export function augmentDataFetchingFunctions(code: string, routeId: string) {
 		const ast = parse(code, { sourceType: "module" })
 		const didTransform = transform(ast, routeId)
 		if (!didTransform) {
-			return code
+			return { code }
 		}
-		return gen(ast).code
+		return gen(ast, { sourceMaps: true })
 	} catch (e) {
-		return code
+		return { code }
 	}
 }

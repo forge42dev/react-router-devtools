@@ -14,7 +14,7 @@ describe("transform", () => {
 			import { withLoaderContextWrapper as _withLoaderContextWrapper   } from "react-router-devtools/context";
 			export const loader = _withLoaderContextWrapper(function loader() {}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the loader export when it's a const variable", () => {
@@ -28,7 +28,7 @@ describe("transform", () => {
 			import { withLoaderContextWrapper as _withLoaderContextWrapper   } from "react-router-devtools/context";
 			export const loader = _withLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the loader export when it's a let variable", () => {
@@ -42,7 +42,7 @@ describe("transform", () => {
 			import { withLoaderContextWrapper as _withLoaderContextWrapper   } from "react-router-devtools/context";
 			export let loader = _withLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the loader export when it's a var variable", () => {
@@ -56,7 +56,7 @@ describe("transform", () => {
 			import { withLoaderContextWrapper as _withLoaderContextWrapper   } from "react-router-devtools/context";
 			export var loader = _withLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the loader export when it's re-exported from another file", () => {
@@ -71,7 +71,7 @@ describe("transform", () => {
       export { loader as _loader } from "./loader.js";
 			export const loader = _withLoaderContextWrapper(_loader, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the loader export when it's imported from another file and exported", () => {
@@ -88,7 +88,7 @@ describe("transform", () => {
 			export { loader as _loader };
 			export const loader = _withLoaderContextWrapper(_loader, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's a function", () => {
@@ -102,7 +102,7 @@ describe("transform", () => {
 			import { withClientLoaderContextWrapper as _withClientLoaderContextWrapper   } from "react-router-devtools/context";
 			export const clientLoader = _withClientLoaderContextWrapper(function clientLoader() {}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's a const variable", () => {
@@ -116,7 +116,7 @@ describe("transform", () => {
 			import { withClientLoaderContextWrapper as _withClientLoaderContextWrapper   } from "react-router-devtools/context";
 			export const clientLoader = _withClientLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's a let variable", () => {
@@ -130,7 +130,7 @@ describe("transform", () => {
 			import { withClientLoaderContextWrapper as _withClientLoaderContextWrapper   } from "react-router-devtools/context";
 			export let clientLoader = _withClientLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's a var variable", () => {
@@ -144,7 +144,7 @@ describe("transform", () => {
 			import { withClientLoaderContextWrapper as _withClientLoaderContextWrapper   } from "react-router-devtools/context";
 			export var clientLoader = _withClientLoaderContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's re-exported from another file", () => {
@@ -161,7 +161,7 @@ describe("transform", () => {
 			export { clientLoader as _clientLoader };
 			export const clientLoader = _withClientLoaderContextWrapper(_clientLoader, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the client loader export when it's imported from another file and exported", () => {
@@ -178,7 +178,7 @@ describe("transform", () => {
 			export { clientLoader as _clientLoader };
 			export const clientLoader = _withClientLoaderContextWrapper(_clientLoader, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the action export when it's a function", () => {
@@ -192,7 +192,7 @@ describe("transform", () => {
 			import { withActionContextWrapper as _withActionContextWrapper   } from "react-router-devtools/context";
 			export const action = _withActionContextWrapper(function action() {}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the action export when it's a const variable", () => {
@@ -206,7 +206,7 @@ describe("transform", () => {
 			import { withActionContextWrapper as _withActionContextWrapper   } from "react-router-devtools/context";
 			export const action = _withActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the action export when it's a let variable", () => {
@@ -220,7 +220,7 @@ describe("transform", () => {
 			import { withActionContextWrapper as _withActionContextWrapper   } from "react-router-devtools/context";
 			export let action = _withActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the action export when it's a var variable", () => {
@@ -234,7 +234,7 @@ describe("transform", () => {
 			import { withActionContextWrapper as _withActionContextWrapper   } from "react-router-devtools/context";
 			export var action = _withActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the action export when it's re-exported from another file", () => {
@@ -249,7 +249,7 @@ describe("transform", () => {
       export { action as _action } from "./action.js";
 			export const action = _withActionContextWrapper(_action, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should wrap the action export when it's imported from another file and exported", () => {
@@ -266,7 +266,7 @@ describe("transform", () => {
 			export { action as _action };
 			export const action = _withActionContextWrapper(_action, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's a function", () => {
@@ -280,7 +280,7 @@ describe("transform", () => {
 			import { withClientActionContextWrapper as _withClientActionContextWrapper   } from "react-router-devtools/context";
 			export const clientAction = _withClientActionContextWrapper(function clientAction() {}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's a const variable", () => {
@@ -294,7 +294,7 @@ describe("transform", () => {
 			import { withClientActionContextWrapper as _withClientActionContextWrapper   } from "react-router-devtools/context";
 			export const clientAction = _withClientActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's a let variable", () => {
@@ -308,7 +308,7 @@ describe("transform", () => {
 			import { withClientActionContextWrapper as _withClientActionContextWrapper   } from "react-router-devtools/context";
 			export let clientAction = _withClientActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's a var variable", () => {
@@ -322,7 +322,7 @@ describe("transform", () => {
 			import { withClientActionContextWrapper as _withClientActionContextWrapper   } from "react-router-devtools/context";
 			export var clientAction = _withClientActionContextWrapper(async ({ request }) => { return {};}, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's re-exported from another file", () => {
@@ -339,7 +339,7 @@ describe("transform", () => {
 			export { clientAction as _clientAction };
 			export const clientAction = _withClientActionContextWrapper(_clientAction, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 
 	it("should transform the client action export when it's imported from another file and exported", () => {
@@ -356,6 +356,6 @@ describe("transform", () => {
 			export { clientAction as _clientAction };
 			export const clientAction = _withClientActionContextWrapper(_clientAction, "test");
 		`)
-		expect(removeWhitespace(result)).toStrictEqual(expected)
+		expect(removeWhitespace(result.code)).toStrictEqual(expected)
 	})
 })
