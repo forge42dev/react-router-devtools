@@ -5,7 +5,7 @@ import { RDTContextProvider, type RdtClientConfig } from "./context/RDTContext.j
 import { useDetachedWindowControls, usePersistOpen, useSettingsContext } from "./context/useRDTContext.js"
 import { useResetDetachmentCheck } from "./hooks/detached/useResetDetachmentCheck.js"
 import { useSyncStateWhenDetached } from "./hooks/detached/useSyncStateWhenDetached.js"
-import { useBorderedRoutes } from "./hooks/useBorderedRoutes.js"
+import { useReactTreeListeners } from "./hooks/useReactTreeListeners.js"
 import { useSetRouteBoundaries } from "./hooks/useSetRouteBoundaries.js"
 import { useTimelineHandler } from "./hooks/useTimelineHandler.js"
 import { ContentPanel } from "./layout/ContentPanel.js"
@@ -43,7 +43,7 @@ const recursivelyChangeTabIndex = (node: Element | HTMLElement, remove = true) =
 const DevTools = ({ plugins: pluginArray }: ReactRouterDevtoolsProps) => {
 	useTimelineHandler()
 	useResetDetachmentCheck()
-	useBorderedRoutes()
+	useReactTreeListeners()
 	useSetRouteBoundaries()
 	useSyncStateWhenDetached()
 	useDevServerConnection()

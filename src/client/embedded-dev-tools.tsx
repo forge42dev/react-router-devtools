@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { useLocation } from "react-router"
 import { RDTContextProvider } from "./context/RDTContext.js"
 import { useSettingsContext } from "./context/useRDTContext.js"
-import { useBorderedRoutes } from "./hooks/useBorderedRoutes.js"
+import { useReactTreeListeners } from "./hooks/useReactTreeListeners.js"
 import { useSetRouteBoundaries } from "./hooks/useSetRouteBoundaries.js"
 import { useTimelineHandler } from "./hooks/useTimelineHandler.js"
 import { ContentPanel } from "./layout/ContentPanel.js"
@@ -18,7 +18,7 @@ export interface EmbeddedDevToolsProps extends ReactRouterDevtoolsProps {
 }
 const Embedded = ({ plugins: pluginArray, mainPanelClassName, className }: EmbeddedDevToolsProps) => {
 	useTimelineHandler()
-	useBorderedRoutes()
+	useReactTreeListeners()
 	useSetRouteBoundaries()
 	const { settings } = useSettingsContext()
 	const { position } = settings

@@ -3,7 +3,7 @@ import { useMatches } from "react-router"
 import { ROUTE_BOUNDARY_GRADIENTS } from "../context/rdtReducer.js"
 import { useDetachedWindowControls, useSettingsContext } from "../context/useRDTContext.js"
 import { useAttachListener } from "./useAttachListener.js"
-import { ROUTE_CLASS } from "./useBorderedRoutes.js"
+import { ROUTE_CLASS } from "./useReactTreeListeners.js"
 
 export const useSetRouteBoundaries = () => {
 	const matches = useMatches()
