@@ -52,6 +52,14 @@ export const SettingsTab = () => {
 			>
 				Show breakpoint indicator
 			</Checkbox>
+			<Checkbox
+				id="enableInspector"
+				hint="This allows you to render an inspector provided by bippy to inspect react components"
+				onChange={() => setSettings({ enableInspector: !settings.enableInspector })}
+				value={settings.enableInspector}
+			>
+				Enable react component inspector
+			</Checkbox>
 
 			<hr className="mt-2 border-gray-700" />
 			<Stack gap="lg">

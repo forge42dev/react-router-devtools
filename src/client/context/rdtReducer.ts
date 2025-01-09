@@ -64,6 +64,10 @@ export type ReactRouterDevtoolsState = {
 	terminals: Terminal[]
 	settings: {
 		/**
+		 * Enables the bippy inspector to inspect react components
+		 */
+		enableInspector: boolean
+		/**
 		 * The breakpoints to show in the corner so you can see the current breakpoint that you defined
 		 */
 		breakpoints: { name: string; min: number; max: number }[]
@@ -165,6 +169,7 @@ export const initialState: ReactRouterDevtoolsState = {
 	terminals: [{ id: 0, locked: false, output: [], history: [] }],
 	server: undefined,
 	settings: {
+		enableInspector: false,
 		showRouteBoundariesOn: "click",
 		breakpoints: [
 			{ name: "", min: 0, max: 639 },

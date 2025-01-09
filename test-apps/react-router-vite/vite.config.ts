@@ -6,6 +6,7 @@ import { reactRouterDevTools, defineRdtConfig } from "react-router-devtools"
 import inspect from "vite-plugin-inspect"
 const config = defineRdtConfig({
   client: {
+    enableInspector: true,
     defaultOpen: false,
     position: "top-right",
     requireUrlFlag: false,

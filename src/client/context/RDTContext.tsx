@@ -110,6 +110,7 @@ export type RdtClientConfig = Pick<
 	| "requireUrlFlag"
 	| "openHotkey"
 	| "urlFlag"
+	| "enableInspector"
 	| "routeBoundaryGradient"
 >
 
