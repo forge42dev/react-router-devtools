@@ -2,7 +2,7 @@
 	"name": "react-router-devtools",
 	"description": "Devtools for React Router - debug, trace, find hydration errors, catch bugs and inspect server/client data with react-router-devtools",
 	"author": "Alem Tuzlak",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"license": "MIT",
 	"keywords": [
 		"react-router",
