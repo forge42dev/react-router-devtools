@@ -60,7 +60,9 @@
 			"require": "./dist/client.css"
 		}
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/forge42dev/react-router-devtools.git"
@@ -101,7 +103,10 @@
 		"icons": "npm run run:scripts scripts/icons.ts",
 		"check:unused": "knip "
 	},
-	"workspaces": [".", "test-apps/*"],
+	"workspaces": [
+		".",
+		"test-apps/*"
+	],
 	"peerDependencies": {
 		"react": ">=17",
 		"react-dom": ">=17",
@@ -161,6 +166,7 @@
 		"react-tooltip": "^5.28.0"
 	},
 	"optionalDependencies": {
+		"@rollup/rollup-darwin-arm64": "^4.30.1",
 		"@rollup/rollup-linux-x64-gnu": "^4.4.1"
 	}
 }
