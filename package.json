@@ -161,6 +161,8 @@
 		"react-tooltip": "^5.28.0"
 	},
 	"optionalDependencies": {
+		"@biomejs/cli-darwin-arm64": "^1.9.4",
+		"@rollup/rollup-darwin-arm64": "^4.30.1",
 		"@rollup/rollup-linux-x64-gnu": "^4.4.1"
 	}
 }

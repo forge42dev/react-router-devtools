@@ -3,6 +3,10 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+
+env:
+  FLY_ORG: ${{ vars.FLY_ORG }}
+
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
