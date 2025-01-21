@@ -123,7 +123,6 @@
 		"@vitest/coverage-v8": "^2.1.5",
 		"@vitest/ui": "^2.1.5",
 		"autoprefixer": "^10.4.20",
-		"bippy": "^0.2.2",
 		"glob": "^11.0.0",
 		"happy-dom": "^15.7.4",
 		"jest-preview": "^0.3.1",
@@ -158,7 +157,9 @@
 		"react-d3-tree": "^3.6.2",
 		"react-diff-viewer-continued": "^3.3.1",
 		"react-hotkeys-hook": "^4.5.0",
-		"react-tooltip": "^5.28.0"
+		"react-scan": "^0.1.0",
+		"react-tooltip": "^5.28.0",
+		"bippy": "^0.2.2"
 	},
 	"optionalDependencies": {
 		"@biomejs/cli-darwin-arm64": "^1.9.4",
