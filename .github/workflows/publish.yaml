@@ -36,3 +36,4 @@ jobs:
       with:
         app_name: ${{ env.FLY_ORG }}-production
         use_isolated_workspace: true
+        workspace_name: docs
