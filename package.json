@@ -2,7 +2,7 @@
 	"name": "react-router-devtools",
 	"description": "Devtools for React Router - debug, trace, find hydration errors, catch bugs and inspect server/client data with react-router-devtools",
 	"author": "Alem Tuzlak",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"license": "MIT",
 	"keywords": [
 		"react-router",
@@ -106,7 +106,7 @@
 		"react": ">=17",
 		"react-dom": ">=17",
 		"react-router": ">=7.0.0",
-		"vite": ">=5.0.0"
+		"vite": ">=5.0.0 || >=6.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
