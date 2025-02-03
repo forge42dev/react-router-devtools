@@ -76,10 +76,6 @@ jobs:
   deploy-preview:
     name: "🚀 Deploy Docs"
     needs: [lint, typecheck, vitest]
-    uses: forge42dev/workflows/.github/workflows/deploy-to-fly.yaml@monorepo-matrix
+    uses: forge-42/fly-deploy@main
     with:
-      workspace_name: docs
-      set_cwd_to_workspace: true
-      github_environment: "docs-previev"
-    secrets:
-      fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+      app_name: docs
