@@ -84,3 +84,4 @@ jobs:
         FLY_REGION: fra
       with:
         app_name: ${{ env.FLY_ORG }}-production
+        workspace_name: react-router-devtools
