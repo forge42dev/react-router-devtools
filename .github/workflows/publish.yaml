@@ -35,4 +35,4 @@ jobs:
         FLY_REGION: fra
       with:
         app_name: ${{ env.FLY_ORG }}-production
-        workspace_name: docs
+        use_isolated_workspace: true
