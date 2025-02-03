@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, ComponentPropsWithoutRef, createContext, useContext, useReducer } from 'react';
-
+import type { JSX } from 'react';
 export type TagType = React.ElementType | keyof JSX.IntrinsicElements;
 
 type TypesElementProps<T extends TagType> = {

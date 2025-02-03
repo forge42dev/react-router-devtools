@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, createContext, useContext, useEffect, useReducer } from 'react';
+import React, { JSX, PropsWithChildren, createContext, useContext, useEffect, useReducer } from 'react';
 import { JsonViewProps } from './/index.js';
 import { useShowTools, ShowTools } from './store/ShowTools.js';
 import { useExpands, Expands } from './store/Expands.js';

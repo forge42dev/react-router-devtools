@@ -141,6 +141,7 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 				server.httpServer?.on("listening", () => {
 					process.rdt_port = server.config.server.port ?? 5173
 				})
+				// @ts-ignore - Fix this
 				const channel = server.hot.channels.find((channel) => channel.name === "ws")
 				server.middlewares.use((req, res, next) =>
 					handleDevToolsViteRequest(req, res, next, (parsedData) => {
@@ -148,6 +149,7 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 						if (routine === "request-event") {
 							unusedEvents.set(parsedData.id + parsedData.startTime, parsedData)
 							for (const client of server.hot.channels) {
+								// @ts-ignore - Fix this
 								if (client.name === "ws") {
 									client.send("request-event", JSON.stringify(parsedData))
 								}
@@ -173,6 +175,7 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 							}
 						}
 						for (const client of server.hot.channels) {
+							// @ts-ignore - Fix this
 							if (client.name === "ws") {
 								client.send("route-info", JSON.stringify({ type, data }))
 							}

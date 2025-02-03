@@ -81,6 +81,7 @@ describe("withLoaderWrapper", () => {
 			silent: true,
 		}
 		const request = new Request("http://localhost:3000")
+		vi.clearAllMocks()
 		const consoleSpy = vi.spyOn(console, "log")
 		const loader = async () => {
 			return "test"
@@ -187,6 +188,7 @@ describe("withActionWrapper", () => {
 			silent: true,
 		}
 		const request = new Request("http://localhost:3000")
+		vi.clearAllMocks()
 		const consoleSpy = vi.spyOn(console, "log")
 		const action = async () => {
 			return "test"

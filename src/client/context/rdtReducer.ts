@@ -50,7 +50,7 @@ export type ServerInfo = {
 }
 
 type HTMLErrorPrimitive = {
-	file: string
+	file?: string
 	tag: string
 }
 
