@@ -150,7 +150,6 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 						if (routine === "request-event") {
 							unusedEvents.set(parsedData.id + parsedData.startTime, parsedData)
 							for (const client of server.hot.channels) {
-								// @ts-ignore - Fix this
 								client.send("request-event", JSON.stringify(parsedData))
 							}
 
@@ -174,7 +173,6 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 							}
 						}
 						for (const client of server.hot.channels) {
-							// @ts-ignore - Fix this
 							client.send("route-info", JSON.stringify({ type, data }))
 						}
 					})
