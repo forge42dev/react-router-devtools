@@ -155,7 +155,7 @@
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
 		"framer-motion": "^12.0.6",
-		"react-d3-tree": "^3.6.3",
+		"react-d3-tree": "^3.6.4",
 		"react-diff-viewer-continued": "^4.0.5",
 		"react-hotkeys-hook": "^4.6.1",
 		"react-tooltip": "^5.28.0"
