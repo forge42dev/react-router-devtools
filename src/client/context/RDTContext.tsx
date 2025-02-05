@@ -1,6 +1,7 @@
 import type { Dispatch } from "react"
 import type React from "react"
 import { createContext, useEffect, useMemo, useReducer } from "react"
+import { bigIntReplacer } from "../../shared/bigint-util.js"
 import { useRemoveBody } from "../hooks/detached/useRemoveBody.js"
 import { checkIsDetached, checkIsDetachedOwner, checkIsDetachedWindow } from "../utils/detached.js"
 import { tryParseJson } from "../utils/sanitize.js"
@@ -126,7 +127,7 @@ export const RDTContextProvider = ({ children, config }: ContextProps) => {
 		// Store user settings for dev tools into local storage
 		setStorageItem(REACT_ROUTER_DEV_TOOLS_SETTINGS, JSON.stringify(settings))
 		// Store general state into local storage
-		setStorageItem(REACT_ROUTER_DEV_TOOLS_STATE, JSON.stringify(rest))
+		setStorageItem(REACT_ROUTER_DEV_TOOLS_STATE, JSON.stringify(rest, bigIntReplacer))
 	}, [state])
 
 	return <RDTContext.Provider value={value}>{children}</RDTContext.Provider>

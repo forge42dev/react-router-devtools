@@ -1,7 +1,11 @@
 import type { ClientActionFunctionArgs, ClientLoaderFunctionArgs, LinksFunction } from "react-router"
+import { convertBigIntToString } from "../shared/bigint-util"
 import type { RequestEvent } from "../shared/request-event"
 
 const sendEventToDevServer = (req: RequestEvent) => {
+	if (req.data) {
+		req.data = convertBigIntToString(req.data)
+	}
 	import.meta.hot?.send("request-event", req)
 }
 
