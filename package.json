@@ -150,7 +150,7 @@
 		"@radix-ui/react-accordion": "^1.2.2",
 		"@radix-ui/react-select": "^2.1.5",
 		"beautify": "^0.0.8",
-		"bippy": "^0.2.24",
+		"bippy": "^0.3.0",
 		"chalk": "^5.4.1",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",

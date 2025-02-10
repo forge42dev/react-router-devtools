@@ -76,6 +76,22 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 	return [
 		{
 			name: "react-router-devtools",
+			config(config) {
+				config.optimizeDeps = {
+					...config.optimizeDeps,
+					include: [
+						...(config.optimizeDeps?.include ?? []),
+						"beautify",
+						"react-diff-viewer-continued",
+						"react-d3-tree",
+						"classnames",
+						"@bkrem/react-transition-group",
+						"react-router-devtools/client",
+						"react-router-devtools/context",
+						"react-router-devtools/server",
+					],
+				}
+			},
 			apply(config) {
 				return shouldInject(config.mode, includeClient)
 			},
