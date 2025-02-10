@@ -4,9 +4,6 @@ on:
     types: [published]
   workflow_dispatch:
 
-env:
-  FLY_ORG: ${{ vars.FLY_ORG }}
-
 jobs:
   npm-publish:
     runs-on: ubuntu-latest
@@ -22,13 +19,22 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  deploy-preview:
+
+  deploy-docs:
     name: "🚀 Deploy Docs"
-    needs: [npm-publish]
-    uses: forge42dev/workflows/.github/workflows/deploy-to-fly.yaml@monorepo-matrix
-    with:
-      workspace_name: docs
-      set_cwd_to_workspace: true
-      github_environment: "docs-release"
-    secrets:
-      fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+    runs-on: ubuntu-latest
+    environment:
+      name: docs-release
+      url: ${{ steps.deploy.outputs.app_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: forge-42/fly-deploy@v1.0.0-rc.1
+        id: deploy
+        env:
+          FLY_ORG: ${{ vars.FLY_ORG }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          FLY_REGION: fra
+        with:
+          workspace_name: docs
+          app_name: react-router-devtools-docs-release
+          use_isolated_workspace: true

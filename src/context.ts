@@ -11,3 +11,4 @@ export {
 	withClientLoaderContextWrapper,
 	withClientActionContextWrapper,
 }
+export type { ExtendedContext } from "./context/extend-context"

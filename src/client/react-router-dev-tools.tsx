@@ -20,7 +20,7 @@ import {
 	setStorageItem,
 } from "./utils/storage.js"
 import "../input.css"
-import { Inspector } from "bippy/inspect"
+import Inspector from "bippy/experiments/inspect"
 import { useHotkeys } from "react-hotkeys-hook"
 import type { RdtPlugin } from "../index.js"
 import { Breakpoints } from "./components/Breakpoints.js"

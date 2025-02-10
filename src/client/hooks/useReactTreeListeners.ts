@@ -165,17 +165,6 @@ export function useReactTreeListeners() {
 						"data-source",
 						`${fileName}:::${line}` //
 					)
-				} else if (isSourceElement(fiberNode)) {
-					const isJsx = isJsxFile(fiberNode)
-
-					const originalSource = fiberNode?._debugSource
-					const source = fiberNode?._debugOwner?._debugSource ?? fiberNode?._debugSource
-					const line = source?.fileName?.startsWith("/") ? originalSource?.lineNumber : source?.lineNumber
-					const fileName = source?.fileName?.startsWith("/") ? originalSource?.fileName : source?.fileName
-					fiberNode.stateNode?.setAttribute?.(
-						"data-source",
-						`${fileName}:::${isJsx ? line - 20 : line}` //
-					)
 				}
 
 				if (fiberNode?.stateNode && fiberNode?.elementType === "form") {

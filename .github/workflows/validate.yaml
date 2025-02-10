@@ -8,9 +8,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  FLY_ORG: ${{ vars.FLY_ORG }}
-
 permissions:
   actions: write
   contents: read
@@ -72,14 +69,23 @@ jobs:
 #        if: always()
 #        uses: davelosert/vitest-coverage-report-action@v2
 
-
-  deploy-preview:
+  deploy-docs-pr-preview:
+    if: ${{ github.event_name == 'pull_request' }}
     name: "🚀 Deploy Docs"
     needs: [lint, typecheck, vitest]
-    uses: forge42dev/workflows/.github/workflows/deploy-to-fly.yaml@monorepo-matrix
-    with:
-      workspace_name: docs
-      set_cwd_to_workspace: true
-      github_environment: "docs-previev"
-    secrets:
-      fly_api_token: ${{ secrets.FLY_API_TOKEN }}
+    runs-on: ubuntu-latest
+    environment:
+      name: docs-release
+      url: ${{ steps.deploy.outputs.app_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: forge-42/fly-deploy@v1.0.0-rc.1
+        id: deploy
+        env:
+          FLY_ORG: ${{ vars.FLY_ORG }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+          FLY_REGION: fra
+        with:
+          workspace_name: docs
+          app_name: react-router-devtools-docs-pr-${{ github.event.number }}
+          use_isolated_workspace: true

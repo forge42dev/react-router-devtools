@@ -1,3 +1,4 @@
+import type { JSX } from "react"
 import { Icon } from "../components/icon/Icon.js"
 import { ErrorsTab } from "./ErrorsTab.js"
 import { NetworkTab } from "./NetworkTab.js"

@@ -115,7 +115,7 @@ export type RdtClientConfig = Pick<
 >
 
 export const RDTContextProvider = ({ children, config }: ContextProps) => {
-	const [state, dispatch] = useReducer<typeof rdtReducer>(rdtReducer, getExistingStateFromStorage(config))
+	const [state, dispatch] = useReducer(rdtReducer, getExistingStateFromStorage(config))
 	// biome-ignore lint/correctness/useExhaustiveDependencies: investigate
 	const value = useMemo(() => ({ state, dispatch }), [state, dispatch])
 

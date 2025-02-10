@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { useState } from "react"
-import { useScan } from "react-scan"
+
 import { useDetachedWindowControls, useSettingsContext } from "../context/useRDTContext.js"
 import { useAttachWindowListener } from "../hooks/useAttachListener.js"
 import { useDebounce } from "../hooks/useDebounce.js"
@@ -25,12 +25,10 @@ const useResizeDetachedPanel = () => {
 const MainPanel = ({ children, isOpen, isEmbedded = false, className }: MainPanelProps) => {
 	const { settings } = useSettingsContext()
 	const { detachedWindow } = useDetachedWindowControls()
-	const { height, panelLocation, enableReactScan } = settings
+	const { height, panelLocation } = settings
 	const { enableResize, disableResize, isResizing } = useResize()
 	useResizeDetachedPanel()
-	useScan({
-		enabled: enableReactScan,
-	})
+
 	return (
 		<div
 			data-testid="react-router-devtools-main-panel"

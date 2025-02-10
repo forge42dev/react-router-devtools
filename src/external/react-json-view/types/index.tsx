@@ -4,6 +4,7 @@ import { useStore } from "../store.js";
 import { ValueQuote } from "../symbol/index.js";
 import { Copied } from "../comps/Copied.js";
 
+
 export const SetComp: FC<PropsWithChildren<{ value: unknown }>> = ({ value }) => {
   const { Set: Comp = {}, displayDataTypes } = useTypesStore();
   const isSet = value instanceof Set;

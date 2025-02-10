@@ -1,6 +1,7 @@
 import { useMemo, useRef, useEffect } from 'react';
 
 function usePrevious<T>(value: T) {
+  // @ts-ignore
   const ref = useRef<T>();
   useEffect(() => {
     ref.current = value;

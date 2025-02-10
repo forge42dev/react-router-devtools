@@ -215,7 +215,9 @@ describe("analyzeCache Test suite", () => {
 	})
 
 	it("should log only once when private is not set and s-maxage and max age are set", () => {
+		vi.clearAllMocks()
 		const loggerSpy = vi.spyOn(console, "log")
+
 		const config = {
 			logs: {
 				cache: true,
