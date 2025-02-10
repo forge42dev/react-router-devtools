@@ -81,11 +81,11 @@ export const reactRouterDevTools: (args?: ReactRouterViteConfig) => Plugin[] = (
 					...config.optimizeDeps,
 					include: [
 						...(config.optimizeDeps?.include ?? []),
-						"beautify",
+						/* 				"beautify",
 						"react-diff-viewer-continued",
 						"react-d3-tree",
 						"classnames",
-						"@bkrem/react-transition-group",
+						"@bkrem/react-transition-group", */
 						"react-router-devtools/client",
 						"react-router-devtools/context",
 						"react-router-devtools/server",
