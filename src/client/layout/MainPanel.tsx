@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { useState } from "react"
+
 import { useDetachedWindowControls, useSettingsContext } from "../context/useRDTContext.js"
 import { useAttachWindowListener } from "../hooks/useAttachListener.js"
 import { useDebounce } from "../hooks/useDebounce.js"

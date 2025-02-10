@@ -60,6 +60,14 @@ export const SettingsTab = () => {
 			>
 				Enable react component inspector
 			</Checkbox>
+			<Checkbox
+				id="enableReactScan"
+				hint="This renders react-scan to inspect your render performance"
+				onChange={() => setSettings({ enableReactScan: !settings.enableReactScan })}
+				value={settings.enableReactScan}
+			>
+				Enable react scan
+			</Checkbox>
 
 			<hr className="mt-2 border-gray-700" />
 			<Stack gap="lg">

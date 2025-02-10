@@ -68,6 +68,10 @@ export type ReactRouterDevtoolsState = {
 		 */
 		enableInspector: boolean
 		/**
+		 * Enables the react-scan inspector to inspect react components
+		 */
+		enableReactScan: boolean
+		/**
 		 * The breakpoints to show in the corner so you can see the current breakpoint that you defined
 		 */
 		breakpoints: { name: string; min: number; max: number }[]
@@ -170,6 +174,7 @@ export const initialState: ReactRouterDevtoolsState = {
 	server: undefined,
 	settings: {
 		enableInspector: false,
+		enableReactScan: false,
 		showRouteBoundariesOn: "click",
 		breakpoints: [
 			{ name: "", min: 0, max: 639 },
