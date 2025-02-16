@@ -38,7 +38,7 @@ export const loader = async ({ request, context,devTools, params  }: LoaderFunct
       resolve("test1");
     }, 3500);
   });
-  return  { message: "Hello World!", test, test1, data };
+  return  { message: "Hello World!", test, test1, data, bigInt: BigInt(10) };
 };
 
 export const clientLoader =  async ({ request, serverLoader,  devTools }: ClientLoaderFunctionArgs) => {

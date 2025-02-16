@@ -77,4 +77,27 @@ export default defineWorkspace([
 			},
 		},
 	},
+	{
+		test: {
+			globals: true,
+			exclude: ["**/node_modules/**", "**/dist/**", "**/docs/**", "**/public/**", "**/test-apps/**"],
+			environment: "node",
+			root: "./src/shared",
+			name: "react-router-devtools/shared",
+			// @ts-expect-error
+			coverage: {
+				provider: "v8",
+				include: ["src/**/*"],
+				reporter: ["text", "json-summary", "json", "html"],
+				reportOnFailure: true,
+				all: false,
+				thresholds: {
+					statements: 70,
+					branches: 75,
+					functions: 70,
+					lines: 70,
+				},
+			},
+		},
+	},
 ])
